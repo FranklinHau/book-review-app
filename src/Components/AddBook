@@ -11,6 +11,8 @@ function AddBook() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        const book = {title, author, description, review};
         
     }
 }
