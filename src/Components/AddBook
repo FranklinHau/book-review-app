@@ -4,4 +4,5 @@ import { useHistory} from 'react-router-dom';
 
 function AddBook() {
     const [title, setTitle] = useState ('')
+    const [author, setAuthor] = useState ('')
 }
