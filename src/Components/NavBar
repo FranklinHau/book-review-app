@@ -1,2 +1,11 @@
 //This component will contain links to navigate between the different routes. 
 import {Link} from 'react-router-dom';
+
+function NavBar() {
+    return (
+        <nav>
+            <Link to="/books">Books</Link>
+            <Link to='/books/new'>Add Book</Link>
+        </nav>
+    );
+}
