@@ -13,6 +13,13 @@ function AddBook() {
         event.preventDefault();
 
         const book = {title, author, description, review};
-        
-    }
-}
+
+        fetch('http://localhost:3001/books', {
+            method: 'POST',
+            headers: {'Content-Type': 'application.json'},
+            body: JSON.stringify(book)
+        })  .then (() => {
+            history.push('/books');
+        });
+
+};
