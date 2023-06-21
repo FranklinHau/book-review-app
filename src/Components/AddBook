@@ -8,5 +8,9 @@ function AddBook() {
     const [description, setDescription] = useState('');
     const [review, setReview] = useState ('');
     const history = useHistory();
-    
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        
+    }
 }
