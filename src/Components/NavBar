@@ -1,1 +1,2 @@
-
+//This component will contain links to navigate between the different routes. 
+import {Link} from 'react-router-dom';
