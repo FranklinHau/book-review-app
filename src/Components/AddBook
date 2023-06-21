@@ -23,3 +23,23 @@ function AddBook() {
         });
 
 };
+    return (
+        <form onSubmit={handleSubmit}>
+            <label> 
+                Book title:
+                <input type='text' value={title} onChange={(e) => setTitle(e.target.value)} required />
+            </label>
+            <label>
+                Author:
+                <input type='text' value={author} onChange={(e) => setReview(e.target.value)} required />
+            </label>
+            <label>
+                Review:
+                <textarea value={review} onChange={(e) => setReview(e.target.value)} required />
+            </label>
+            <button type='submit'>Add Book</button>
+        </form>
+    );
+}
+
+export default AddBook; 
