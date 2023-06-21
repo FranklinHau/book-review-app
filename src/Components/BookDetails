@@ -19,10 +19,11 @@ function BookDetails() {
             .then(response => response.json())
             .then(data => setBook(data));
     }, [id]);
+    
+//The handleDelete function is called when the delete button is clicked. 
+//This function makes a DELETE request to the server to delete the book, 
+//and then navigates back to the book list.
 
-    //The handleDelete function is called when the delete button is clicked. 
-    //This function makes a DELETE request to the server to delete the book, 
-    //and then navigates back to the book list.
     const handleDelete = () => {
         fetch(`http://localhost:3001/books/${id}`, {
             method: 'DELETE'
