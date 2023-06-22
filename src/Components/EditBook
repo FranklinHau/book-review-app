@@ -1,0 +1,11 @@
+import { useEffect, useState } from "react";
+import { useParams, useHistory } from "react-router-dom";
+
+function EditBook() {
+    const [title, setTitle] = useState('');
+    const [author, setAuthor] = useState('');
+    const [description, setDescription] = useState('');
+    const [review, setReview] = useState('');
+    const { id } = useParams ();
+    const history = useHistory ();
+}
