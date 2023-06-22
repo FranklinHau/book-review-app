@@ -1,5 +1,5 @@
 //This component will display a form to edit a book's details.
-//In this component, we're using the useState, useEffect, useParams, and useHistory hooks. 
+//In this component, I'm using the useState, useEffect, useParams, and useHistory hooks. 
 //useState is used to create state variables for each input field in the form, 
 //useEffect is used to fetch the current details of the book and prefill the form fields when the component mounts, 
 //useParams is used to get the ID of the book from the URL, 
@@ -25,7 +25,9 @@ function EditBook() {
                 setReview(data.review);
             });
     }, [id]);
-
+//The handleSubmit function is called when the form is submitted. 
+//This function creates a new book object from the state variables, 
+//makes a PUT request to the server to update the book, and then navigates back to the book details page.
     const handleSubmit = (event) => {
         event.preventDefault();
 
