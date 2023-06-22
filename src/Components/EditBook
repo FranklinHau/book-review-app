@@ -8,4 +8,32 @@ function EditBook() {
     const [review, setReview] = useState('');
     const { id } = useParams ();
     const history = useHistory ();
+
+    useEffect(() => {
+        fetch(`http://localhost:3001/books/${id}`)
+            .then(response => response.json())
+            .then(data => {
+                setTitle(data.title);
+                setAuthor(data.author);
+                setDescription(data.description);
+                setReview(data.review);
+            });
+    }, [id]);
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        const book = { title, author, description, review };
+
+        fetch(`http://localhost:3001/books/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json'},
+            body: JSON.stringify(book)
+        })
+            .then(() => {
+                history.push(`/books/${id}`);
+            });
+    };
+
+    
 }
