@@ -12,8 +12,8 @@ function EditBook() {
     const [author, setAuthor] = useState('');
     const [description, setDescription] = useState('');
     const [review, setReview] = useState('');
-    const { id } = useParams ();
-    const history = useHistory ();
+    const { id } = useParams();
+    const history = useHistory();
 
     useEffect(() => {
         fetch(`http://localhost:3001/books/${id}`)
@@ -25,9 +25,9 @@ function EditBook() {
                 setReview(data.review);
             });
     }, [id]);
-//The handleSubmit function is called when the form is submitted. 
-//This function creates a new book object from the state variables, 
-//makes a PUT request to the server to update the book, and then navigates back to the book details page.
+    //The handleSubmit function is called when the form is submitted. 
+    //This function creates a new book object from the state variables, 
+    //makes a PUT request to the server to update the book, and then navigates back to the book details page.
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -35,7 +35,7 @@ function EditBook() {
 
         fetch(`http://localhost:3001/books/${id}`, {
             method: 'PUT',
-            headers: { 'Content-Type': 'application/json'},
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(book)
         })
             .then(() => {
