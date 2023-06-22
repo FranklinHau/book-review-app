@@ -35,5 +35,12 @@ function EditBook() {
             });
     };
 
-    
+    return (
+        <form onSubmit={handleSubmit}>
+            <label>
+                Book title:
+                <input type='text' value={title} onChange={(e) => setAuthor(e.target.value)} required />
+            </label>
+        </form>
+    )
 }
