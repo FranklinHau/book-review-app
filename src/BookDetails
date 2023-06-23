@@ -7,7 +7,7 @@
 //useHistory is used to programmatically navigate the user back to the book list after a book is deleted.
 
 import { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
 
 function BookDetails() {
     const [book, setBook] = useState(null);
