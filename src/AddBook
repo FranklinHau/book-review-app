@@ -21,7 +21,7 @@ function AddBook() {
 
         fetch('http://localhost:3001/books', {
             method: 'POST',
-            headers: { 'Content-Type': 'application.json' },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(book)
         }).then(() => {
             history.push('/books');
@@ -36,7 +36,11 @@ function AddBook() {
             </label>
             <label>
                 Author:
-                <input type='text' value={author} onChange={(e) => setReview(e.target.value)} required />
+                <input type='text' value={author} onChange={(e) => setAuthor(e.target.value)} required />
+            </label>
+            <label>
+                Description:
+                <textarea value={description} onChange={(e) => setDescription(e.target.value)} required />
             </label>
             <label>
                 Review:
