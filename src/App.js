@@ -13,10 +13,10 @@ function App() {
     <Router>
       <NavBar />
       <Routes>
-        <Route path='books/new' component={AddBook} />
-        <Route path='books/:id/edit' component={EditBook} />
-        <Route path='books/:id/' component={BookDetails} />
-        <Route path='books/' component={BookList} />
+        <Route path='books/new' element={<AddBook />} />
+        <Route path='books/:id/edit' element={<EditBook />} />
+        <Route path='books/:id/' element={<BookDetails />} />
+        <Route path='books/' element={<BookList />} />
       </Routes>
     </Router>
   );
