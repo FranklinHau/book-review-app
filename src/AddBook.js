@@ -1,15 +1,15 @@
 //This component will display a form to add a new book.
 //In this component, I'm using the useState hook to create state variables for each input field in the form. 
-//I'm also using the useHistory hook from react-router-dom to programmatically navigate the user back to the book list after a book is added.
+//I'm also using the useNavigate hook from react-router-dom to programmatically navigate the user back to the book list after a book is added.
 import { useState } from "react";
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function AddBook() {
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
     const [description, setDescription] = useState('');
     const [review, setReview] = useState('');
-    const History = useHistory();
+    const navigate = useNavigate();
 
     //The handleSubmit function is called when the form is submitted. 
     //This function creates a new book object from the state variables, 
@@ -24,7 +24,7 @@ function AddBook() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(book)
         }).then(() => {
-            history.push('/books');
+            navigate('/books');
         });
 
     };
