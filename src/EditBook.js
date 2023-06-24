@@ -1,11 +1,11 @@
 //This component will display a form to edit a book's details.
-//In this component, I'm using the useState, useEffect, useParams, and useHistory hooks. 
+//In this component, I'm using the useState, useEffect, useParams, and useNavigate hooks. 
 //useState is used to create state variables for each input field in the form, 
 //useEffect is used to fetch the current details of the book and prefill the form fields when the component mounts, 
 //useParams is used to get the ID of the book from the URL, 
-//and useHistory is used to programmatically navigate the user back to the book details page after the book is updated.
+//and useNavigate is used to programmatically navigate the user back to the book details page after the book is updated.
 import { useEffect, useState } from "react";
-import { useParams, useHistory, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 function EditBook() {
     const [title, setTitle] = useState('');
