@@ -7,12 +7,12 @@
 //useHistory is used to programmatically navigate the user back to the book list after a book is deleted.
 
 import { useEffect, useState } from "react";
-import { useParams, useHistory, Link } from "react-router-dom";
+import { useParams, useHistory, Link, useNavigate } from "react-router-dom";
 
 function BookDetails() {
     const [book, setBook] = useState(null);
     const { id } = useParams();
-    const history = useHistory();
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch(`http://localhost:3001/books/${id}`)
@@ -29,7 +29,7 @@ function BookDetails() {
             method: 'DELETE'
         })
             .then(() => {
-                history.push('/books');
+                navigate('/books/${id}');
             });
     };
 

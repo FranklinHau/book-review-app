@@ -9,7 +9,7 @@ function AddBook() {
     const [author, setAuthor] = useState('');
     const [description, setDescription] = useState('');
     const [review, setReview] = useState('');
-    const history = useHistory();
+    const History = useHistory();
 
     //The handleSubmit function is called when the form is submitted. 
     //This function creates a new book object from the state variables, 
