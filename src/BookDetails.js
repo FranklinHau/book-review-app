@@ -1,13 +1,13 @@
 //This component will display detailed information about a single book.
 //I'm using the useState and useEffect hooks from React, 
-//Also using the useParams and useHistory hooks from react-router-dom. 
+//Also using the useParams and useNavigate hooks from react-router-dom. 
 //useState is used to create a state variable for the book, 
 //useEffect is used to fetch the book from the server when the component mounts, 
 //useParams is used to get the ID of the book from the URL,
-//useHistory is used to programmatically navigate the user back to the book list after a book is deleted.
+//useNavigate is used to programmatically navigate the user back to the book list after a book is deleted.
 
 import { useEffect, useState } from "react";
-import { useParams, useHistory, Link, useNavigate } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 
 function BookDetails() {
     const [book, setBook] = useState(null);
