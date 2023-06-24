@@ -5,7 +5,7 @@
 //useParams is used to get the ID of the book from the URL, 
 //and useHistory is used to programmatically navigate the user back to the book details page after the book is updated.
 import { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, useNavigate } from "react-router-dom";
 
 function EditBook() {
     const [title, setTitle] = useState('');
@@ -13,7 +13,7 @@ function EditBook() {
     const [description, setDescription] = useState('');
     const [review, setReview] = useState('');
     const { id } = useParams();
-    const history = useHistory();
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch(`http://localhost:3001/books/${id}`)
@@ -39,7 +39,7 @@ function EditBook() {
             body: JSON.stringify(book)
         })
             .then(() => {
-                history.push(`/books/${id}`);
+                navigate(`/books/${id}`);
             });
     };
 
