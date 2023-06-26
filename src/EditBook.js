@@ -10,6 +10,7 @@ import { useParams, useNavigate } from "react-router-dom";
 function EditBook() {
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
+    const [year, setYear] = useState('');
     const [description, setDescription] = useState('');
     const [review, setReview] = useState('');
     const { id } = useParams();
@@ -31,7 +32,7 @@ function EditBook() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const book = { title, author, description, review };
+        const book = { title, author, year, description, review };
 
         fetch(`http://localhost:3001/books/${id}`, {
             method: 'PUT',
@@ -52,6 +53,10 @@ function EditBook() {
             <label>
                 Author:
                 <input type='text' value={author} onChange={(e) => setAuthor(e.target.value)} required />
+            </label>
+            <label>
+                Year published:
+                <input type='text' value={year} onChange={(e) => setYear(e.target.value)} required />
             </label>
             <label>
                 Description:

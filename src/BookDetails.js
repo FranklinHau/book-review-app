@@ -7,7 +7,7 @@
 //useNavigate is used to programmatically navigate the user back to the book list after a book is deleted.
 
 import { useEffect, useState } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 function BookDetails() {
     const [book, setBook] = useState(null);
@@ -37,10 +37,11 @@ function BookDetails() {
         <div>
             <h2>{book.title}</h2>
             <p>{book.author}</p>
+            <p>{book.year}</p>
             <p>{book.description}</p>
             <p>{book.review}</p>
             <button onClick={handleDelete}>Delete Book</button>
-            ,<button><Link to={`/books/${book.id}/edit`}>Edit Book</Link></button>
+            ,
         </div>
     );
 }

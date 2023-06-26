@@ -9,9 +9,12 @@ body {
   min-height: 100vh;
 }
 
+p {
+  color:aqua
+}
 
 h2 {
-  color: #333;
+  color: beige;
 }
 
 form {
