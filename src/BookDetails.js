@@ -29,7 +29,7 @@ function BookDetails() {
             method: 'DELETE'
         })
             .then(() => {
-                navigate('/books/${id}');
+                navigate('/books');
             });
     };
 
