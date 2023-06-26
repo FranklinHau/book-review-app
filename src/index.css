@@ -1,23 +1,65 @@
 body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #800020;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-align: center;
- 
 }
+
+
+h2 {
+  color: #333;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+
 
 .nav-link {
   font-size: 2em;
   color: white;
+  border-color: black;
+  border-radius: 40px;
+  margin-right: 20px;
+
   
 }
 
 .nav-link:hover {
-  color: red;
+  color: yellow;
+}
+
+a {
+ color: bisque ;
 }
 
 
