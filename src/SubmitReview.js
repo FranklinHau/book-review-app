@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-function SubmitReview() {
+function SubmitReview({id}) {
     const [review, setReview] = useState('');
-    const { id } = useParams();
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {

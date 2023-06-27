@@ -6,6 +6,7 @@ import NavBar from './NavBar';
 import BookList from './BookList.js';
 import AddBook from './AddBook.js';
 import BookDetails from './BookDetails.js';
+import SubmitReview from './SubmitReview';
 //don't want user to remove their review once submitted
 //import EditBook from './EditBook.js';  
 
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Navigate to='/books' />} /> 
         <Route path='books/new' element={<AddBook />} />
+        <Route path='books/:id/review' element={<SubmitReview />} />
         <Route path='books/:id/' element={<BookDetails />} />
         <Route path='books/' element={<BookList />} />
       </Routes>
