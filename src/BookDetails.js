@@ -41,7 +41,7 @@ function BookDetails() {
         <div>
             <h2>{book.title}</h2>
             <p>{book.author}</p>
-            <p>Year published  {book.year}</p>
+            <p>Year published:  {book.year}</p>
             <p>Description:  {book.description}</p>
             <h2>Reviews:</h2>
             {book.reviews && book.reviews.map((review, index) => (
@@ -49,7 +49,7 @@ function BookDetails() {
             ))}
             <form onSubmit={handleSubmitReview}>
                 <label>
-                    Review:
+                    Your Review:
                     <textarea value={review} onChange={(e) => setReview(e.target.value)} required />
                 </label>
                 <button type='submit'>Submit Your Review</button>

@@ -2,15 +2,18 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #800020;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-image: url('./background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-
+  
 p {
-  color:aqua
+  color:yellow;
 }
 
 h2 {
@@ -18,11 +21,13 @@ h2 {
 }
 
 form {
-  background-color: #fff;
+  background-color: #8B0000;
   padding: 20px;
   margin: 20px auto;
   max-width: 500px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: Balck;
+  font-weight: bold;
 }
 
 label {
@@ -35,6 +40,7 @@ input, textarea {
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ddd;
+  box-sizing: border-box;
 }
 
 button {
@@ -69,3 +75,7 @@ a {
   margin: 20px 0;
 }
 
+.review-heading {
+  font-size: 1.5em;
+  font-weight: bold;
+}
