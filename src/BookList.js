@@ -7,11 +7,15 @@ function BookList() {
     const [books, setBooks] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
 
+    const fetchBooks = async () => {
+        const response = await fetch('http://localhost:3001/books');
+        const data = await response.json();
+        setBooks(data);
+    };
     useEffect(() => {
-        fetch('http://localhost:3001/books')
-            .then(response => response.json())
-            .then(data => setBooks(data));
+        fetchBooks();
     }, []);
+
 
     const handleSearchChange = (event) => {
         setSearchTerm(event.target.value);

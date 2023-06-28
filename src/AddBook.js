@@ -11,7 +11,18 @@ function AddBook() {
     const [review, setReview] = useState('');
     const navigate = useNavigate();
     const [rating, setRating] = useState(0);
+    const [newBookAdded, setNewBookAdded] = useState(false);
  
+    const addBook = async (book) => {
+        await fetch('http://localhost:3001/books', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'}
+            body: JSON.stringify(book),
+        });
+
+        setNewBookAdded(true);
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault();
 

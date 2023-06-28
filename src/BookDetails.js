@@ -22,9 +22,8 @@ function BookDetails() {
             .then(response => response.json())
             .then(data => {
                 setBook(data);
-                setReview(data.review);
-            });
-        }, [id]);
+                });
+        }, [id, newBookAdded]);
 
     const handleSubmitReview = (event) => {
         event.preventDefault();

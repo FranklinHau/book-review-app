@@ -7,12 +7,14 @@ import BookList from './BookList.js';
 import AddBook from './AddBook.js';
 import BookDetails from './BookDetails.js';
 import SubmitReview from './SubmitReview';
+import { useState } from "react";
 
 //don't want user to remove their review once submitted
 //import EditBook from './EditBook.js';  
 
 
 function App() {
+  const [newBookAdded, setNewBookAdded] = useState(false);
   return (
     <Router>
       <NavBar />
