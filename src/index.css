@@ -13,7 +13,9 @@ body {
 }
   
 p {
-  color:yellow;
+  color:yellowgreen;
+  font-weight: bold;
+
 }
 
 h2 {
@@ -78,4 +80,15 @@ a {
 .review-heading {
   font-size: 1.5em;
   font-weight: bold;
+}
+
+.add-book-btn {
+  margin-right: 20px; 
+}
+
+.home-btn {
+  margin-left: 80px; 
+}
+.star-rating-bottom{
+  margin-bottom: 50px;
 }

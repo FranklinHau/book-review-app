@@ -1,8 +1,7 @@
-//This component will display a form to add a new book.
-//In this component, I'm using the useState hook to create state variables for each input field in the form. 
-//I'm also using the useNavigate hook from react-router-dom to programmatically navigate the user back to the book list after a book is added.
-import { useState } from "react";
+
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import StarRating from './StarRating';
 
 function AddBook() {
     const [title, setTitle] = useState('');
@@ -11,14 +10,12 @@ function AddBook() {
     const [description, setDescription] = useState('');
     const [review, setReview] = useState('');
     const navigate = useNavigate();
-
-    //The handleSubmit function is called when the form is submitted. 
-    //This function creates a new book object from the state variables, 
-    //makes a POST request to the server to add the new book, and then navigates back to the book list.    
+    const [rating, setRating] = useState(0);
+ 
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const book = { title, author, year, description, review };
+        const book = { title, author, year, description, review, rating };
 
         fetch('http://localhost:3001/books', {
             method: 'POST',
@@ -29,6 +26,11 @@ function AddBook() {
         });
 
     };
+
+    const handleHomeClick = () => {
+        navigate('/');
+    }
+
     return (
         <form onSubmit={handleSubmit}>
             <label>
@@ -51,7 +53,12 @@ function AddBook() {
                 Review:
                 <textarea value={review} onChange={(e) => setReview(e.target.value)} required />
             </label>
-            <button type='submit'>Add Book</button>
+            <label>
+                Rating:
+                <StarRating rating={rating} setRating={setRating} />
+            </label>
+            <button type='submit' className='add-book-btn'>Add Book</button>
+            <button type='button' onClick={handleHomeClick} className='home-btn'>Home</button>
         </form>
     );
 }
