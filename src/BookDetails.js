@@ -2,6 +2,8 @@
 
 import {useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import StarRating from "./StarRating";
+//import { useNavigate } from "react-router-dom";
 
 
 function BookDetails() {
@@ -9,6 +11,11 @@ function BookDetails() {
     const [review, setReview] = useState('');
     const { id } = useParams();
     const navigate = useNavigate();
+    const [rating, setRating] = useState(0);
+
+    const handleHomeClick = () => {
+        navigate('/');
+    };
 
     useEffect(() => {
         fetch(`http://localhost:3001/books/${id}`)
@@ -22,7 +29,7 @@ function BookDetails() {
     const handleSubmitReview = (event) => {
         event.preventDefault();
 
-        const newReviews= [...book.reviews, review];
+        const newReviews= [...book.reviews, {text: review, rating: rating }];
 
         const updatedBook = {...book, reviews: newReviews};
 
@@ -33,6 +40,8 @@ function BookDetails() {
     })
             .then (() => {
                 setBook(updatedBook);
+                setReview('');
+                setRating(0);
                 navigate(`/books/${id}`);
             });
         };
@@ -44,15 +53,20 @@ function BookDetails() {
             <p>Year published:  {book.year}</p>
             <p>Description:  {book.description}</p>
             <h2>Reviews:</h2>
-            {book.reviews && book.reviews.map((review, index) => (
-                <p key={index}>{review}</p>
+            {Array.isArray(book.reviews) && book.reviews.map((review, index) => (
+                 <div key={index}>
+                 <p>{review.text}</p>
+                 <p>{review.rating}</p>
+             </div>
             ))}
             <form onSubmit={handleSubmitReview}>
                 <label>
                     Your Review:
                     <textarea value={review} onChange={(e) => setReview(e.target.value)} required />
                 </label>
+                <StarRating rating={rating} setRating={setRating} />
                 <button type='submit'>Submit Your Review</button>
+                <button type='button' onClick={handleHomeClick} style={{ marginLeft: '30px'}}>Home</button>
             </form>
         </div>
     );

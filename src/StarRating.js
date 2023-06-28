@@ -13,7 +13,7 @@ function StarRating({ rating, setRating}) {
                             <input 
                                 type='radio'
                                 name='rating'
-                                value='{ratingValue}'
+                                value={ratingValue}
                                 onClick={() => setRating(ratingValue)}
                                 style={{ display: 'none'}}
                                 />
