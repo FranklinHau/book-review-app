@@ -23,7 +23,7 @@ function SubmitReview({id}) {
                 Review:
                 <textarea value={review} onChange={(e) => setReview(e.target.value)} required />
             </label>
-            <button type='submit'>Submit Review</button>
+            <button type='submit'>Submit</button>
         </form>
     );
 }

@@ -6,7 +6,7 @@ import StarRating from "./StarRating";
 //import { useNavigate } from "react-router-dom";
 
 
-function BookDetails() {
+function BookDetails({ newBookAdded, setNewBookAdded }) {
     const [book, setBook] = useState(null);
     const [review, setReview] = useState('');
     const { id } = useParams();
@@ -24,6 +24,7 @@ function BookDetails() {
                 setBook(data);
                 });
         }, [id, newBookAdded]);
+    
 
     const handleSubmitReview = (event) => {
         event.preventDefault();
@@ -41,12 +42,13 @@ function BookDetails() {
                 setBook(updatedBook);
                 setReview('');
                 setRating(0);
+                setNewBookAdded(true);
                 navigate(`/books/${id}`);
             });
         };
     
     return book && (
-        <div>
+        <div className='book-details-container'>
             <h2>{book.title}</h2>
             <p>{book.author}</p>
             <p>Year published:  {book.year}</p>
@@ -61,7 +63,7 @@ function BookDetails() {
             <form onSubmit={handleSubmitReview}>
                 <label>
                     Your Review:
-                    <textarea value={review} onChange={(e) => setReview(e.target.value)} required />
+                    <textarea className='only-review' value={review} onChange={(e) => setReview(e.target.value)} required />
                 </label>
                 <StarRating rating={rating} setRating={setRating} />
                 <button type='submit'>Submit Your Review</button>

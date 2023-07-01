@@ -32,6 +32,7 @@ function BookList() {
                 placeholder="Search for a book" 
                 value={searchTerm} 
                 onChange={handleSearchChange} 
+                className="search-input"
             />
             {filteredBooks.map(book => (
                 <div key={book.id}>

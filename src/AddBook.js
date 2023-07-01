@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import StarRating from './StarRating';
 
-function AddBook() {
+function AddBook({ setNewBookAdded }) {
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
     const [year, setYear] = useState('');
@@ -11,22 +11,18 @@ function AddBook() {
     const [review, setReview] = useState('');
     const navigate = useNavigate();
     const [rating, setRating] = useState(0);
-    const [newBookAdded, setNewBookAdded] = useState(false);
+    
  
-    const addBook = async (book) => {
-        await fetch('http://localhost:3001/books', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'}
-            body: JSON.stringify(book),
-        });
-
-        setNewBookAdded(true);
-    }
-
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const book = { title, author, year, description, review, rating };
+        const book = { 
+            title,
+             author,
+              year, 
+              description, 
+              reviews:[{ text:review, rating }]
+        };
 
         fetch('http://localhost:3001/books', {
             method: 'POST',
@@ -43,7 +39,7 @@ function AddBook() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className='addbook-form' onSubmit={handleSubmit}>
             <label>
                 Book title:
                 <input type='text' value={title} onChange={(e) => setTitle(e.target.value)} required />
@@ -58,11 +54,11 @@ function AddBook() {
             </label>
             <label>
                 Description:
-                <textarea value={description} onChange={(e) => setDescription(e.target.value)} required />
+                <textarea className= 'description-box' value={description} onChange={(e) => setDescription(e.target.value)} required />
             </label>
             <label>
                 Review:
-                <textarea value={review} onChange={(e) => setReview(e.target.value)} required />
+                <textarea className= 'review-box' value={review} onChange={(e) => setReview(e.target.value)} required />
             </label>
             <label>
                 Rating:

@@ -9,13 +9,11 @@ body {
   background-image: url('./background.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
 }
   
 p {
   color:yellowgreen;
   font-weight: bold;
-
 }
 
 h2 {
@@ -24,11 +22,11 @@ h2 {
 
 form {
   background-color: #8B0000;
-  padding: 20px;
+  padding: 30px;
   margin: 20px auto;
-  max-width: 500px;
+  max-width: 600px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  color: Balck;
+  color: Black;
   font-weight: bold;
 }
 
@@ -40,9 +38,20 @@ label {
 input, textarea {
   width: 100%;
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border: 1px solid #ddd;
   box-sizing: border-box;
+  resize: none;
+}
+
+.only-review {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  resize: none;
 }
 
 button {
@@ -51,21 +60,33 @@ button {
   color: #fff;
   border: none;
   cursor: pointer;
+  margin-top: 20px;
 }
 
+.add-book-btn {
+  margin-right: 30px;
+}
 
+.navbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
 
-.nav-link {
+.nav-link1, .nav-link2 {
   font-size: 2em;
   color: white;
   border-color: black;
-  border-radius: 40px;
+  border-radius: 10px;
   margin-right: 20px;
-
-  
 }
 
-.nav-link:hover {
+.nav-link1:hover {
+  color: Red;
+}
+
+.nav-link2:hover {
   color: yellow;
 }
 
@@ -75,20 +96,49 @@ a {
 
 .search-box {
   margin: 20px 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.review-heading {
-  font-size: 1.5em;
-  font-weight: bold;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.add-book-btn {
-  margin-right: 20px; 
+.description-box {
+  width: 100%;
+  height: 100px;
 }
 
-.home-btn {
-  margin-left: 80px; 
+.review-box {
+  width: 100%;
+  height: 100px;
 }
-.star-rating-bottom{
-  margin-bottom: 50px;
+
+.book-details-container {
+  margin-top: 5px;
 }
+
+.nav-link1.home-page {
+  font-size: 80px;
+  text-align: left;
+}
+
+.navbar-container.home-page {
+  justify-content: flex-start;
+}
+
+.search-input {
+  width: 60%;
+  padding: 10px;
+  display: block;
+  margin: auto;
+}
+
+.search-box input[type="text"] {
+  color: blue;
+}
+
