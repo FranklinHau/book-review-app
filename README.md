@@ -5,6 +5,8 @@ This is a React application for reviewing books. Users can search for books, add
 ## Project Structure
 
 The project is organized as follows:
+
+```
 my-app
 ├── public
 │ ├── index.html
@@ -27,6 +29,8 @@ my-app
 ├── README.md
 ├── package.json
 └── package-lock.json
+
+```
 
 ## Installation
 
