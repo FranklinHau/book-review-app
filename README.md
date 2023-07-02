@@ -66,6 +66,11 @@ https://youtu.be/e9B9ZCAKlWc
 ## Acknowledgment
 
 Background image: https://wallpaperaccess.com/book#google_vignette
+
 React Router: https://reactrouter.com/en/main
+
 React: https://react.dev/
+
 w3schools: https://www.w3schools.com/REACT/DEFAULT.ASP
+
+Flatiron School Web Development Materials: https://flatironschool.com/
