@@ -1,9 +1,10 @@
-
+//sets up the main layout of my application and handles routing. 
+//It also manages a piece of state (newBookAdded) that is used to determine whether a new book has been added
 
 import {useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import StarRating from "./StarRating";
-//import { useNavigate } from "react-router-dom";
+
 
 
 function BookDetails({ newBookAdded, setNewBookAdded }) {

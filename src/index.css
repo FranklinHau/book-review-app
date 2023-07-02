@@ -1,144 +1,44 @@
+a {
+    color: bisque ;
+   }
+   
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  min-height: 100vh;
   background-image: url('./background.jpg');
-  background-size: cover;
   background-position: center;
-}
-  
-p {
-  color:yellowgreen;
-  font-weight: bold;
+  background-size: cover;
+  display: flex;
+  font-family: Arial, sans-serif;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
 }
 
 h2 {
   color: beige;
 }
 
-form {
-  background-color: #8B0000;
-  padding: 30px;
-  margin: 20px auto;
-  max-width: 600px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  color: Black;
+p {
+  color: yellowgreen;
   font-weight: bold;
 }
 
-label {
-  display: block;
-  margin-bottom: 10px;
-}
-
 input, textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
   border: 1px solid #ddd;
   box-sizing: border-box;
-  resize: none;
-}
-
-.only-review {
-  width: 100%;
-  height: 150px;
-  padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ddd;
-  box-sizing: border-box;
+  padding: 10px;
   resize: none;
+  width: 100%;
 }
 
 button {
-  padding: 10px 20px;
   background-color: #007BFF;
-  color: #fff;
   border: none;
+  color: #fff;
   cursor: pointer;
   margin-top: 20px;
-}
-
-.add-book-btn {
-  margin-right: 30px;
-}
-
-.navbar-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
-
-.nav-link1, .nav-link2 {
-  font-size: 2em;
-  color: white;
-  border-color: black;
-  border-radius: 10px;
-  margin-right: 20px;
-}
-
-.nav-link1:hover {
-  color: Red;
-}
-
-.nav-link2:hover {
-  color: yellow;
-}
-
-a {
- color: bisque ;
-}
-
-.search-box {
-  margin: 20px 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.description-box {
-  width: 100%;
-  height: 100px;
-}
-
-.review-box {
-  width: 100%;
-  height: 100px;
-}
-
-.book-details-container {
-  margin-top: 5px;
-}
-
-.nav-link1.home-page {
-  font-size: 80px;
-  text-align: left;
-}
-
-.navbar-container.home-page {
-  justify-content: flex-start;
-}
-
-.search-input {
-  width: 60%;
-  padding: 10px;
-  display: block;
-  margin: auto;
-}
-
-.search-box input[type="text"] {
-  color: blue;
+  padding: 10px 20px;
 }
 

@@ -1,0 +1,94 @@
+.add-book-btn {
+    margin-right: 30px;
+  }
+  
+  .book-details-container {
+    margin-top: 5px;
+  }
+  
+  .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .description-box {
+    height: 100px;
+    width: 100%;
+  }
+  
+  form {
+    background-color: #8B0000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: Black;
+    font-weight: bold;
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 30px;
+  }
+  
+  .nav-link1, .nav-link2 {
+    border-color: black;
+    border-radius: 10px;
+    color: white;
+    font-size: 2em;
+    margin-right: 20px;
+  }
+  
+  .nav-link1.home-page {
+    font-size: 80px;
+    text-align: left;
+  }
+  
+  .nav-link1:hover {
+    color: Red;
+  }
+  
+  .nav-link2:hover {
+    color: yellow;
+  }
+  
+  .navbar-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  .navbar-container.home-page {
+    justify-content: flex-start;
+  }
+  
+  .only-review {
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    height: 150px;
+    margin-bottom: 10px;
+    padding: 10px;
+    resize: none;
+    width: 100%;
+  }
+  
+  .review-box {
+    height: 100px;
+    width: 100%;
+  }
+  
+  .search-box {
+    box-sizing: border-box;
+    margin: 20px 0;
+    width:100%;
+  }
+  
+  .search-box input[type="text"] {
+    color: blue;
+  }
+  
+  .search-input {
+    display: block;
+    margin: auto;
+    padding: 10px;
+    width: 60%;
+  }
