@@ -1,5 +1,5 @@
-//sets up the main layout of my application and handles routing. 
-//It also manages a piece of state (newBookAdded) that is used to determine whether a new book has been added
+//This component fetches and displays detailed information about a specific book, allows users to submit reviews for that book,
+//and updates the book data on the server when a new review is submitted.
 
 import {useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
@@ -14,18 +14,23 @@ function BookDetails({ newBookAdded, setNewBookAdded }) {
     const navigate = useNavigate();
     const [rating, setRating] = useState(0);
 
-    const handleHomeClick = () => {
+    const handleHomeClick = () => {   //This function navigates to the home page when called
         navigate('/');
     };
 
+//fetches the book data from the server when the component is first rendered and whenever the id or 
+//newBookAdded state changes. The book data is then set to the book state.
     useEffect(() => {
-        fetch(`http://localhost:3001/books/${id}`)
+        fetch(`http://localhost:3001/books/${id}`)  
             .then(response => response.json())
             .then(data => {
                 setBook(data);
                 });
         }, [id, newBookAdded]);
     
+//This function is called when the review form is submitted.
+//It prevents the page from refreshing, creates a new review, 
+//updates the book data on the server, and then updates the book, review, rating, and newBookAdded states.
 
     const handleSubmitReview = (event) => {
         event.preventDefault();
@@ -47,8 +52,8 @@ function BookDetails({ newBookAdded, setNewBookAdded }) {
                 navigate(`/books/${id}`);
             });
         };
-    
-    return book && (
+                                        // The return statement renders the book details and a form for
+    return book && (                                    //submitting reviews. If the book state is null, nothing is rendered.
         <div className='book-details-container'>
             <h2>{book.title}</h2>
             <p>{book.author}</p>

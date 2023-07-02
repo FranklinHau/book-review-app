@@ -1,3 +1,5 @@
+//sets up the main layout of my application and handles routing. 
+//It also manages a piece of state (newBookAdded) that is used to determine whether a new book has been added
 
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import NavBar from './NavBar';
