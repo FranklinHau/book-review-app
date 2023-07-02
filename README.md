@@ -79,3 +79,6 @@ React: https://react.dev/
 w3schools: https://www.w3schools.com/REACT/DEFAULT.ASP
 
 Flatiron School Web Development Materials: https://flatironschool.com/
+
+## License
+MIT
