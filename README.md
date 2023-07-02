@@ -34,7 +34,8 @@ my-app
 
 ## Installation
 
-To install the dependencies, run:
+Fork and clone this repo.
+Then To install the dependencies, run:
 npm install
 
 ## Running the App
