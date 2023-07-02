@@ -1,27 +1,36 @@
+//This component displays a form for creating a new book, 
+//sends a POST request to the server to create the book when the form is submitted, 
+//and navigates to the '/books' route once the book is created.
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import StarRating from './StarRating';
 
-function AddBook({ setNewBookAdded }) {
+//These lines create state variables for title, author, year, description, review, and rating, 
+// with functions to update them (setTitle, setAuthor, setYear, setDescription, setReview, and setRating). 
+//The initial values of these state variables are empty strings or 0.
+function CreateBook({ setNewBookAdded }) {
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
     const [year, setYear] = useState('');
     const [description, setDescription] = useState('');
     const [review, setReview] = useState('');
-    const navigate = useNavigate();
     const [rating, setRating] = useState(0);
-    
- 
+    const navigate = useNavigate();  // hook to get a function that can be used to navigate to different routes.
+
+
+    //This function is called when the form is submitted. It prevents the page from refreshing, 
+    //creates a new book object, sends a POST request to the server to create a new book, 
+    //and then navigates to the '/books' route.
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const book = { 
+        const book = {
             title,
-             author,
-              year, 
-              description, 
-              reviews:[{ text:review, rating }]
+            author,
+            year,
+            description,
+            reviews: [{ text: review, rating }]
         };
 
         fetch('http://localhost:3001/books', {
@@ -33,11 +42,14 @@ function AddBook({ setNewBookAdded }) {
         });
 
     };
-
+    //This function navigates to the home page when called.
     const handleHomeClick = () => {
         navigate('/');
     }
 
+    //renders a form with fields for the book title, author, year, description, review, and rating. 
+    //The values of these fields are bound to the corresponding state variables,
+    //and the onChange handlers update the state when the fields are changed.
     return (
         <form className='addbook-form' onSubmit={handleSubmit}>
             <label>
@@ -54,11 +66,11 @@ function AddBook({ setNewBookAdded }) {
             </label>
             <label>
                 Description:
-                <textarea className= 'description-box' value={description} onChange={(e) => setDescription(e.target.value)} required />
+                <textarea className='description-box' value={description} onChange={(e) => setDescription(e.target.value)} required />
             </label>
             <label>
                 Review:
-                <textarea className= 'review-box' value={review} onChange={(e) => setReview(e.target.value)} required />
+                <textarea className='review-box' value={review} onChange={(e) => setReview(e.target.value)} required />
             </label>
             <label>
                 Rating:
@@ -70,4 +82,4 @@ function AddBook({ setNewBookAdded }) {
     );
 }
 
-export default AddBook; 
+export default CreateBook; 
