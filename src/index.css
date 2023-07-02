@@ -4,7 +4,7 @@ a {
    
 body {
   align-items: center;
-  background-image: url('./background.jpg');
+  background-image: url('/public/background.jpg');
   background-position: center;
   background-size: cover;
   display: flex;
@@ -16,7 +16,7 @@ body {
 }
 
 h2 {
-  color: beige;
+  color: bisque;
 }
 
 p {

@@ -58,9 +58,10 @@ function BookDetails({ newBookAdded, setNewBookAdded }) {
     return book && (                                    //submitting reviews. If the book state is null, nothing is rendered.
         <div className='book-details-container'>
             <h2>{book.title}</h2>
-            <p>{book.author}</p>
-            <p>Year published:  {book.year}</p>
-            <p>Description:  {book.description}</p>
+            <h4 className='author-year-description'>Author:</h4> <p>{book.author}</p>
+            <h4 className='author-year-description'>Year published:</h4> <p>{book.year}</p>
+            <h4 className='author-year-description'>Description:</h4> <p>{book.description}</p>
+            <br></br>
             <h2>Reviews:</h2>
             {Array.isArray(book.reviews) && book.reviews.map((review, index) => (
                 <div key={index}>

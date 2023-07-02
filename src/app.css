@@ -1,17 +1,30 @@
 .add-book-btn {
     margin-right: 30px;
   }
-  
-  .book-details-container {
-    margin-top: 5px;
+
+  .author-year-description {
+    color: whitesmoke; 
   }
   
+  .book-details-container {
+    margin-top: 50px;
+    max-width: 600px;
+
+  }
+
+  .book-details-container h2,
+.book-details-container p {
+  margin: auto; 
+}
+  
+
   .container {
-    align-items: center;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 100vh;
+    align-items: center;
+    
   }
   
   .description-box {
@@ -92,3 +105,6 @@
     padding: 10px;
     width: 60%;
   }
+
+  
+  
